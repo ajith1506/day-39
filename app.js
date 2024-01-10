@@ -7,12 +7,8 @@ const routes = require("./routes/routes");
 const app = express();
 const PORT = 3000;
 
-// Connect to MongoDB
-
-const uri = "mongodb://localhost:27017/guvi-fsd";
-
 mongoose
-  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect("mongodb://localhost:27017")
   .then(() => {
     console.log("Connected to MongoDB");
   })
